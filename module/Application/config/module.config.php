@@ -1,9 +1,4 @@
 <?php
-/**
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2016 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
 
 namespace Application;
 
@@ -18,16 +13,6 @@ return [
                 'type' => Literal::class,
                 'options' => [
                     'route'    => '/',
-                    'defaults' => [
-                        'controller' => Controller\IndexController::class,
-                        'action'     => 'index',
-                    ],
-                ],
-            ],
-            'application' => [
-                'type'    => Segment::class,
-                'options' => [
-                    'route'    => '/application[/:action]',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
@@ -55,6 +40,22 @@ return [
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',
+        ],
+    ],
+    'navigation' => [
+        'topNavigation' => [
+            'tutorial' => [
+                'label' => 'Tutorial',
+                'route' => 'tutorial',
+            ],
+            'blog' => [
+                'label' => 'Blog',
+                'route' => 'blog',
+            ],
+            'admin' => [
+                'label' => 'Admin',
+                'route' => 'admin',
+            ],
         ],
     ],
 ];

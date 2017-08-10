@@ -15,4 +15,22 @@ class Module
     {
         return include __DIR__ . '/../config/module.config.php';
     }
+
+    public function getViewHelperConfig()
+    {
+        return [
+            'invokables' => [
+                'getYear' => View\Helper\GetYear::class,
+            ],
+        ];
+    }
+
+    public function getServiceConfig()
+    {
+        return [
+            'factories' => [
+                'topNavigation' => Service\TopNavigationService::class,
+            ],
+        ];
+    }
 }
