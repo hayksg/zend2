@@ -17,7 +17,11 @@ class Module
     {
         return [
             'invokables' => [
-                'greetingService' => Service\GreetingService::class,
+                'eventService'    => Service\EventService::class,
+            ],
+            'factories' => [
+                'greetingService'   => Service\GreetingServiceFactory::class,
+                'greetingAggregate' => Event\GreetingServiceListenerAggregateFactory::class,
             ],
         ];
     }
