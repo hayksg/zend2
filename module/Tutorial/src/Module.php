@@ -3,6 +3,8 @@
 namespace Tutorial;
 
 use Tutorial\Controller\IndexController;
+use Zend\ModuleManager\ModuleManager;
+use Zend\Mvc\MvcEvent;
 
 class Module
 {
@@ -38,4 +40,47 @@ class Module
             ],
         ];
     }
+
+    /*public function init(ModuleManager $moduleManager)
+    {
+        $moduleManager->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            'dispatch',
+            [$this, 'onInit']
+        );
+    }
+
+    public function onInit()
+    {
+        echo __METHOD__;
+    }*/
+
+    /*public function onBootstrap(MvcEvent $mvcEvent)
+    {
+        $mvcEvent->getApplication()->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            'dispatch',
+            function ($e) {
+                $controller = $e->getTarget();
+                $controller->layout('layout/layoutSecond');
+            },
+            100
+        );
+    }*/
+
+    public function init(ModuleManager $moduleManager)
+    {
+        $moduleManager->getEventManager()->getSharedManager()->attach(
+            __NAMESPACE__,
+            'dispatch',
+            function ($e) {
+                $controller = $e->getTarget();
+                $controller->
+                $controller->layout('layout/layoutSecond');
+            },
+            100
+        );
+    }
+
+
 }

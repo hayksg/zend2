@@ -1,0 +1,13 @@
+<?php
+$this->headScript()->appendScript("$(function(){ $('ul.nav.navbar-nav li').eq(0).addClass('active'); });");
+
+$title = 'Sample';
+$this->headTitle($title);
+?>
+<div class="row">
+    <div class="col-sm-12">
+        <h3><?= $title ?></h3>
+    </div>
+</div>
+<div><?= $this->escapeHtml($this->greeting) ?></div>
+<p><a href="/tutorial/sample/example">Example</a></p>

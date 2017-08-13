@@ -18,6 +18,19 @@ return [
                         'action'     => 'index',
                     ],
                 ],
+                'may_terminate' => true,
+                'child_routes' => [
+                    'sample' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'    => '/sample[/:action]',
+                            'defaults' => [
+                                'controller' => Controller\SampleController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
@@ -25,6 +38,7 @@ return [
         'factories' => [
             //Controller\IndexController::class => InvokableFactory::class,
             //Controller\IndexController::class => Controller\IndexControllerFactory::class,
+            Controller\SampleController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [

@@ -23,7 +23,8 @@ return [
     'Zend\Router',
     'Zend\Validator',
     'Application',
-    'Tutorial',
     'Blog',
     'Admin',
+    'Tutorial',
+    //'TutorialMod',
 ];
