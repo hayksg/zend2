@@ -23,3 +23,11 @@ div.container a.navbar-brand > img {
     /* Set the fixed height of the footer here */
     height: 80px;
 }
+
+.success-class {
+    color: green;
+}
+
+.error-class {
+    color: #d00;
+}

@@ -9,5 +9,16 @@ $this->headTitle($title);
         <h3><?= $title ?></h3>
     </div>
 </div>
+<?php
+echo $this->flashMessenger()->render('success', ['success-class']);
+echo $this->flashMessenger()->render('error',   ['error-class']);
+?>
 <div><?= $this->escapeHtml($this->greeting) ?></div>
+<p><?= $this->escapeHtml($this->url) ?></p>
+<p><?= $this->escapeHtml($this->date) ?></p>
+<p><?= $this->getTime() ?></p>
 <p><a href="/tutorial/sample/example">Example</a></p>
+<form action="/tutorial/sample" method="post">
+    <input type="text" name="title">
+    <button>Submit</button>
+</form>
