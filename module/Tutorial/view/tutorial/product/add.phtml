@@ -1,0 +1,15 @@
+<?php
+$title = 'Add product';
+$this->headTitle($title);
+?>
+<div class="row">
+    <div class="col-sm-12">
+        <h3><?= $title ?></h3>
+    </div>
+</div>
+<div>
+    <form action="/product/add/12" method="post">
+        <input type="text" name="title">
+        <button>Submit</button>
+    </form>
+</div>
