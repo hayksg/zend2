@@ -33,4 +33,14 @@ class Module
             ],
         ];
     }
+
+    public function getControllerPluginConfig()
+    {
+        return [
+            'invokables' => [
+                'clearString'     => Controller\Plugin\ClearString::class,
+                'stringValidator' => Controller\Plugin\StringValidator::class,
+            ],
+        ];
+    }
 }
