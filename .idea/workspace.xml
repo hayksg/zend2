@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f982c309-8b39-4277-ad83-00408afc9f4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Application/src/Controller/Plugin/ClearString.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Application/src/Controller/Plugin/StringValidator.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Application/src/Validator/FloatValidator.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/tutorial/c.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/src/Module.php" afterPath="$PROJECT_DIR$/module/Application/src/Module.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Blog/src/Controller/IndexController.php" afterPath="$PROJECT_DIR$/module/Blog/src/Controller/IndexController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml" afterPath="$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Tutorial/src/Controller/IndexController.php" afterPath="$PROJECT_DIR$/module/Tutorial/src/Controller/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Tutorial/src/Controller/SampleController.php" afterPath="$PROJECT_DIR$/module/Tutorial/src/Controller/SampleController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Tutorial/view/tutorial/index/index.phtml" afterPath="$PROJECT_DIR$/module/Tutorial/view/tutorial/index/index.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/index.phtml" afterPath="$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/index.phtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,20 +22,54 @@
       <file leaf-file-name="index.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/index/index.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+            <state relative-caret-position="286">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="e#0#5#0#PHP" expanded="false" />
+                <element signature="e#495#500#0#PHP" expanded="false" />
+                <element signature="e#502#760#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClearString.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Application/src/Controller/Plugin/ClearString.php">
+      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Controller/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="46" />
+            <state relative-caret-position="576">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SampleController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Controller/SampleController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+              <folding>
+                <element signature="e#39#61#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="module.config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/config/module.config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/index.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -44,8 +78,8 @@
       <file leaf-file-name="StringValidator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Application/src/Controller/Plugin/StringValidator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+            <state relative-caret-position="418">
+              <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="e#49#95#0#PHP" expanded="true" />
               </folding>
@@ -53,46 +87,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Application/src/Module.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Application/src/Controller/IndexController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="5" column="30" lean-forward="false" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              <folding>
-                <marker date="1503522528624" expanded="true" signature="329:406" ph="..." />
-                <marker date="1503522528624" expanded="true" signature="357:399" ph="..." />
-                <marker date="1503522528624" expanded="true" signature="442:515" ph="..." />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,7 +120,7 @@
       <file leaf-file-name="AbstractValidator.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/AbstractValidator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="858">
               <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="25" />
               <folding />
             </state>
@@ -172,27 +172,27 @@
         <option value="$PROJECT_DIR$/config/modules.config.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/module/Tutorial/src/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/module/Tutorial/src/Controller/Plugin/GetDate.php" />
         <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/example.phtml" />
         <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/exampleNew.phtml" />
-        <option value="$PROJECT_DIR$/module/Tutorial/src/Controller/SampleController.php" />
         <option value="$PROJECT_DIR$/module/Tutorial/src/View/Helper/GetTime.php" />
         <option value="$PROJECT_DIR$/module/Tutorial/src/Module.php" />
-        <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/index.phtml" />
         <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/product/post.phtml" />
         <option value="$PROJECT_DIR$/module/Application/config/module.config.php" />
         <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/product/add.phtml" />
         <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/product/index.phtml" />
         <option value="$PROJECT_DIR$/module/Tutorial/src/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/module/Tutorial/config/module.config.php" />
-        <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/index/index.phtml" />
         <option value="$PROJECT_DIR$/module/Application/src/Controller/Plugin/ClearString.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Module.php" />
         <option value="$PROJECT_DIR$/module/Blog/src/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Controller/Plugin/StringValidator.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Vaidator/FloatValidator.php" />
         <option value="$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml" />
+        <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/index/index.phtml" />
+        <option value="$PROJECT_DIR$/module/Tutorial/src/Controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/index.phtml" />
+        <option value="$PROJECT_DIR$/module/Tutorial/src/Controller/SampleController.php" />
       </list>
     </option>
   </component>
@@ -474,12 +474,25 @@
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="zend2.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zend2.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="zend2.loc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zend2.loc" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="tutorial" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -489,16 +502,16 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\zend2.loc\module\Tutorial\src\Controller" />
+      <recent name="C:\wamp64\www\zend2.loc\module\Tutorial\src\Service" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\zend2.loc\public\img\tutorial" />
       <recent name="C:\wamp64\www\zend2.loc\module\Tutorial\view\tutorial\product" />
       <recent name="C:\wamp64\www\zend2.loc\module\Tutorial\view\tutorial" />
       <recent name="C:\wamp64\www\zend2.loc\module\Tutorial\src\Controller" />
       <recent name="C:\wamp64\www\zend2.loc\module\Tutorial\view\tutorial\sample" />
-      <recent name="C:\wamp64\www\zend2.loc\module\TutorialMod" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\zend2.loc\module\Tutorial\src\Controller" />
-      <recent name="C:\wamp64\www\zend2.loc\module\Tutorial\src\Service" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -530,12 +543,13 @@
       <workItem from="1502614058250" duration="3909000" />
       <workItem from="1502888616206" duration="3106000" />
       <workItem from="1502964578576" duration="6259000" />
-      <workItem from="1503518232116" duration="3597000" />
+      <workItem from="1503518232116" duration="3672000" />
+      <workItem from="1503578988513" duration="4040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28249000" />
+    <option name="totallyTimeSpent" value="32364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
@@ -545,7 +559,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -767,31 +781,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="69" lean-forward="false" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
-          <folding>
-            <element signature="e#39#88#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Controller/Plugin/GetDate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Controller/SampleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="40" column="54" lean-forward="false" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
-          <folding>
-            <element signature="e#39#88#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -817,14 +811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -873,31 +859,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Tutorial/config/module.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-788">
-          <caret line="59" column="12" lean-forward="false" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
-          <folding>
-            <element signature="e#28#57#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/product/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="24" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/index/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#5#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,7 +885,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
+        <state relative-caret-position="660">
           <caret line="30" column="1" lean-forward="false" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="12" />
           <folding />
         </state>
@@ -927,7 +893,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Application/src/Module.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
+        <state relative-caret-position="814">
           <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="32" />
           <folding />
         </state>
@@ -935,8 +901,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Application/src/Controller/Plugin/StringValidator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="418">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="e#49#95#0#PHP" expanded="true" />
           </folding>
@@ -953,7 +919,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/AbstractValidator.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="858">
           <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="25" />
           <folding />
         </state>
@@ -969,12 +935,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/config/module.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/index/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
           <folding>
-            <marker date="1503522528624" expanded="true" signature="329:406" ph="..." />
-            <marker date="1503522528624" expanded="true" signature="357:399" ph="..." />
-            <marker date="1503522528624" expanded="true" signature="442:515" ph="..." />
+            <element signature="e#0#5#0#PHP" expanded="false" />
+            <element signature="e#495#500#0#PHP" expanded="false" />
+            <element signature="e#502#760#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/view/tutorial/sample/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Tutorial/src/Controller/SampleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#61#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

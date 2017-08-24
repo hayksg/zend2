@@ -1,21 +1,4 @@
 <?php
-
-$value = 10.2;
-
-$floatValidator = new \Application\Validator\FloatValidator();
-
-if ($floatValidator->isValid($value)) {
-    echo 'OK';
-} else {
-    foreach ($floatValidator->getMessages() as $message) {
-        echo '<div>' . $message . '</div>';
-    }
-}
-
-
-
-
-
 $title = 'Blog';
 $this->headTitle($title);
 ?>

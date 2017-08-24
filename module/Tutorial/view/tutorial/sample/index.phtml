@@ -18,7 +18,9 @@ echo $this->flashMessenger()->render('error',   ['error-class']);
 <p><?= $this->escapeHtml($this->date) ?></p>
 <p><?= $this->getTime() ?></p>
 <p><a href="/tutorial/sample/example">Example</a></p>
-<form action="/tutorial/sample" method="post">
+<p class="error-class"><?= $this->escapeHtml($this->message) ?></p>
+<form action="/tutorial/sample/foo" method="post">
     <input type="text" name="title">
     <button>Submit</button>
 </form>
+<p><a href="/tutorial/sample/download">Download</a></p>

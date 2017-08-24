@@ -32,6 +32,21 @@ echo $second->first->hello('Hi', 'Tom');*/
 
 ?>
 <?php
+
+/*$value = 10.2;
+
+$floatValidator = new \Application\Validator\FloatValidator();
+
+if ($floatValidator->isValid($value)) {
+    echo 'OK';
+} else {
+    foreach ($floatValidator->getMessages() as $message) {
+        echo '<div>' . $message . '</div>';
+    }
+}*/
+
+?>
+<?php
 $title = 'Tutorial';
 $this->headTitle($title);
 ?>
@@ -43,3 +58,4 @@ $this->headTitle($title);
 <div><?= $this->escapeHtml($this->greeting) ?></div>
 <p><a href="/tutorial/sample">Sample</a></p>
 <p><a href="/product">Products</a></p>
+
