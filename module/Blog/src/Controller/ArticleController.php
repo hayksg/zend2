@@ -7,7 +7,7 @@ use Zend\View\Model\ViewModel;
 use Doctrine\ORM\EntityManagerInterface;
 use Application\Entity\Article;
 
-class IndexController extends AbstractActionController
+class ArticleController extends AbstractActionController
 {
     private $entityManager;
     private $repository;
@@ -20,10 +20,15 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
-        $articles = $this->repository->findAll();
+        $id = intval($this->getEvent()->getRouteMatch()->getParam('id', 0));
+        $article = $this->repository->find($id);
+
+        if (! $article) {
+            return $this->notFoundAction();
+        }
 
         return new ViewModel([
-            'articles' => $articles,
+            'article' => $article,
         ]);
     }
 }

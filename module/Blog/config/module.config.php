@@ -18,12 +18,29 @@ return [
                         'action'     => 'index',
                     ],
                 ],
+                'may_terminate' => true,
+                'child_routes' => [
+                    'article' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'    => '/article[/:action][/:id]',
+                            'constraints'    => [
+                                'action' => '[a-z]+',
+                                'id'     => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ArticleController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class => InvokableFactory::class,
+            //Controller\IndexController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [

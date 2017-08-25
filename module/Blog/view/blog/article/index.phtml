@@ -1,0 +1,30 @@
+<?php
+if ($this->article) {
+    $title = $this->escapeHtml($article->getTitle());
+    $this->headTitle($title);
+}
+?>
+<div class="row">
+    <div class="col-sm-12">
+        <h3><?= $title ?></h3>
+    </div>
+</div>
+<hr>
+<div class="panel">
+    <div class="panel-heading">
+        <div class="overflow-hidden">
+            <img src="<?= $this->escapeHtml($article->getImage()) ?>"
+                 class="img-responsive pull-left app-img"
+                 width="200"
+                 height="120"
+                 src="image"
+            >
+            <div><?= $this->escapeHtml($article->getContent()) ?></div>
+        </div>
+    </div>
+    <br>
+    <div class="panel-footer">
+        <a href="<?= $this->url('blog') ?>">&laquo; Back</a>
+    </div>
+</div>
+<br>

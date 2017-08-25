@@ -31,3 +31,11 @@ div.container a.navbar-brand > img {
 .error-class {
     color: #d00;
 }
+
+.app-img {
+    margin-right: 10px;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
