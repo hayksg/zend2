@@ -29,12 +29,16 @@ class Category
     private $name;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_public", type="boolean", precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $isPublic;
+
+    /**
      * @var \Application\Entity\Category
      *
-     * @ORM\ManyToOne(targetEntity="Application\Entity\Category")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="parent_id", referencedColumnName="id", nullable=true)
-     * })
+     * @ORM\Column(name="parent_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
      */
     private $parent;
 
@@ -71,6 +75,30 @@ class Category
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set isPublic
+     *
+     * @param boolean $isPublic
+     *
+     * @return Category
+     */
+    public function setIsPublic($isPublic)
+    {
+        $this->isPublic = $isPublic;
+
+        return $this;
+    }
+
+    /**
+     * Get isPublic
+     *
+     * @return boolean
+     */
+    public function getIsPublic()
+    {
+        return $this->isPublic;
     }
 
     /**

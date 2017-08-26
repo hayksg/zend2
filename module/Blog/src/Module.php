@@ -4,6 +4,7 @@ namespace Blog;
 
 use Blog\Controller\IndexController;
 use Blog\Controller\ArticleController;
+use Blog\Controller\CategoryController;
 use Doctrine\ORM\EntityManager;
 
 class Module
@@ -26,6 +27,11 @@ class Module
                 },
                 Controller\ArticleController::class => function ($container) {
                     return new ArticleController(
+                        $container->get(EntityManager::class)
+                    );
+                },
+                Controller\CategoryController::class => function ($container) {
+                    return new CategoryController(
                         $container->get(EntityManager::class)
                     );
                 },

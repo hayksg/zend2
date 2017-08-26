@@ -1,6 +1,8 @@
 <?php
-$title = 'Articles list';
-$this->headTitle($title);
+if ($this->category) {
+    $title = $this->escapeHtml($this->category->getName());
+    $this->headTitle($title);
+}
 ?>
 <div class="row">
     <div class="col-sm-12">

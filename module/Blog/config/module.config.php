@@ -34,6 +34,20 @@ return [
                             ],
                         ],
                     ],
+                    'category' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'    => '/category[/:action][/:id]',
+                            'constraints'    => [
+                                'action' => '[a-z]+',
+                                'id'     => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\CategoryController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
                 ],
             ],
         ],

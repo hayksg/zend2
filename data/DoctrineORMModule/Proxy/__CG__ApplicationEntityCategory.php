@@ -64,10 +64,10 @@ class Category extends \Application\Entity\Category implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'parent'];
+            return ['__isInitialized__', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'isPublic', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'parent'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'parent'];
+        return ['__isInitialized__', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'isPublic', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'parent'];
     }
 
     /**
@@ -208,6 +208,28 @@ class Category extends \Application\Entity\Category implements \Doctrine\ORM\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getName', []);
 
         return parent::getName();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIsPublic($isPublic)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIsPublic', [$isPublic]);
+
+        return parent::setIsPublic($isPublic);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getIsPublic()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getIsPublic', []);
+
+        return parent::getIsPublic();
     }
 
     /**

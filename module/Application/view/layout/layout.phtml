@@ -12,12 +12,15 @@
 
         <!-- Le styles -->
         <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/liMenuVert.css'))
             ->prependStylesheet($this->basePath('css/style.css'))
             ->prependStylesheet($this->basePath('css/bootstrap-lumen.min.css'))
         ?>
 
         <!-- Scripts -->
         <?= $this->headScript()
+            ->prependFile($this->basePath('js/jquery.liMenuVert.js'))
+            ->prependFile($this->basePath('js/app-script.js'))
             ->prependFile($this->basePath('js/bootstrap.min.js'))
             ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
         ?>
