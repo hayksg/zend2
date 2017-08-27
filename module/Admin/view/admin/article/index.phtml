@@ -1,0 +1,11 @@
+<?php
+$title = 'Manage articles';
+$this->headTitle($title);
+?>
+<div class="row">
+    <div class="col-sm-12">
+        <h3><?= $title ?></h3>
+    </div>
+</div>
+<hr>
+<?= $this->navigation('admin_breadcrumb')->breadcrumbs()->setMinDepth(0)->setPartial('partial/breadcrumb') ?>

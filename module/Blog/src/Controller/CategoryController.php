@@ -6,6 +6,7 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Doctrine\ORM\EntityManagerInterface;
 use Application\Entity\Category;
+use Application\Entity\Article;
 
 class CategoryController extends AbstractActionController
 {
@@ -27,8 +28,11 @@ class CategoryController extends AbstractActionController
             return $this->notFoundAction();
         }
 
+        $articles = $this->entityManager->getRepository(Article::class)->findBy(['category' => $id]);
+
         return new ViewModel([
             'category' => $category[0],
+            'articles' => $articles,
         ]);
     }
 }

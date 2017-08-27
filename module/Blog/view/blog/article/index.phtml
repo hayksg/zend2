@@ -1,6 +1,6 @@
 <?php
 if ($this->article) {
-    $title = $this->escapeHtml($article->getTitle());
+    $title = $this->escapeHtml($article->getCategory()->getName());
     $this->headTitle($title);
 }
 ?>
@@ -10,21 +10,46 @@ if ($this->article) {
     </div>
 </div>
 <hr>
-<div class="panel">
-    <div class="panel-heading">
-        <div class="overflow-hidden">
-            <img src="<?= $this->escapeHtml($article->getImage()) ?>"
-                 class="img-responsive pull-left app-img"
-                 width="200"
-                 height="120"
-                 src="image"
-            >
-            <div><?= $this->escapeHtml($article->getContent()) ?></div>
+<div class="row">
+    <div class="col-sm-3">
+        <div><?= $this->getCategory() ?></div>
+    </div>
+    <div class="col-sm-9">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3><?= $this->escapeHtml($article->getTitle()) ?></h3>
+                <div class="overflow-hidden">
+                    <img src="<?= $this->escapeHtml($article->getImage()) ?>"
+                         class="img-responsive pull-left app-img"
+                         width="200"
+                         height="120"
+                         src="image"
+                    >
+                    <div><?= $this->escapeHtml($article->getContent()) ?></div>
+                </div>
+            </div>
+            <br>
+            <div class="panel-footer">
+                <a href="<?= $this->url('blog') ?>">&laquo; Back</a>
+            </div>
         </div>
     </div>
-    <br>
-    <div class="panel-footer">
-        <a href="<?= $this->url('blog') ?>">&laquo; Back</a>
-    </div>
 </div>
-<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

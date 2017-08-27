@@ -59,6 +59,22 @@ return [
         ],
     ],
     'navigation' => [
+        /*'default' => [
+            'admin' => [
+                'label' => 'Admin',
+                'route' => 'admin',
+                'pages' => [
+                    'category' => [
+                        'label' => 'Categories',
+                        'route' => 'admin/category',
+                    ],
+                    'article' => [
+                        'label' => 'Articles',
+                        'route' => 'admin/article',
+                    ],
+                ],
+            ],
+        ],*/
         'topNavigation' => [
             'tutorial' => [
                 'label' => 'Tutorial',

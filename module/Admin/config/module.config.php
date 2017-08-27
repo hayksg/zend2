@@ -18,6 +18,37 @@ return [
                         'action'     => 'index',
                     ],
                 ],
+                'may_terminate' => true,
+                'child_routes' => [
+                    'category' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'    => '/category[/:action[/:id]]',
+                            'constraints'    => [
+                                'action' => '[a-z]+',
+                                'id'     => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\CategoryController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+                    'article' => [
+                        'type' => Segment::class,
+                        'options' => [
+                            'route'    => '/article[/:action[/:id]]',
+                            'constraints'    => [
+                                'action' => '[a-z]+',
+                                'id'     => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ArticleController::class,
+                                'action'     => 'index',
+                            ],
+                        ],
+                    ],
+                ],
             ],
         ],
     ],
@@ -34,4 +65,22 @@ return [
             __DIR__ . '/../view',
         ],
     ],
+    'navigation' => [
+        'admin_breadcrumb' => [
+            'admin' => [
+                'label' => 'Admin',
+                'route' => 'admin',
+                'pages' => [
+                    'category' => [
+                        'label' => 'Categories',
+                        'route' => 'admin/category',
+                    ],
+                    'article' => [
+                        'label' => 'Articles',
+                        'route' => 'admin/article',
+                    ],
+                ],
+            ],
+        ],
+    ]
 ];
