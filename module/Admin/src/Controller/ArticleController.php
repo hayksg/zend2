@@ -20,6 +20,12 @@ class ArticleController extends AbstractActionController
 
     public function indexAction()
     {
+
+        return new ViewModel();
+    }
+
+    public function addAction()
+    {
         return new ViewModel();
     }
 }

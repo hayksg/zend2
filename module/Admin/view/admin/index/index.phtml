@@ -2,15 +2,9 @@
 $title = 'Admin area';
 $this->headTitle($title);
 ?>
-<div class="row">
-    <div class="col-sm-12">
-        <h3><?= $title ?></h3>
-    </div>
-</div>
-<br>
+<?= $this->partial('partial/titleAndBreadcrumbTemplate', ['title' => $title]) ?>
 <p>You have the following capabilities:</p>
 <ul class="list-unstyled">
     <li><a href="<?= $this->url('admin/category') ?>">Manage categories</a></li>
     <li><a href="<?= $this->url('admin/article') ?>">Manage articles</a></li>
 </ul>
-<?= $this->navigation('admin_breadcrumb')->breadcrumbs()->setMinDepth(0)->setPartial('partial/breadcrumb') ?>

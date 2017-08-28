@@ -39,3 +39,32 @@ div.container a.navbar-brand > img {
 .overflow-hidden {
     overflow: hidden;
 }
+
+.breadcrumb {
+    padding: 2px 10px;
+    margin-bottom: 0;
+}
+
+.breadcrumb-block {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.form-delete {
+    display: inline-block;
+}
+
+.form-delete button{
+    background: none;
+    border: none;
+    color: #158cba;
+    padding-left: 0;
+}
+
+table a {
+    text-decoration: none !important;
+}
+
+table a:hover, table form button:hover {
+    text-decoration: underline !important;
+}

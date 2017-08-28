@@ -2,10 +2,18 @@
 $title = 'Manage articles';
 $this->headTitle($title);
 ?>
+<?= $this->partial('partial/titleAndBreadcrumbTemplate', ['title' => $title]) ?>
 <div class="row">
     <div class="col-sm-12">
-        <h3><?= $title ?></h3>
+        <div>
+            <a href="<?= $this->url('admin/article', ['action' => 'add']) ?>" class="btn btn-default">Add article</a>
+        </div>
     </div>
 </div>
-<hr>
-<?= $this->navigation('admin_breadcrumb')->breadcrumbs()->setMinDepth(0)->setPartial('partial/breadcrumb') ?>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+        <h4>Articles list</h4>
+    </div>
+</div>
+

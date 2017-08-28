@@ -2,10 +2,52 @@
 $title = 'Manage categories';
 $this->headTitle($title);
 ?>
+<?= $this->partial('partial/titleAndBreadcrumbTemplate', ['title' => $title]) ?>
 <div class="row">
     <div class="col-sm-12">
-        <h3><?= $title ?></h3>
+        <div>
+            <a href="<?= $this->url('admin/category', ['action' => 'add']) ?>" class="btn btn-default">Add category</a>
+        </div>
     </div>
 </div>
-<hr>
-<?= $this->navigation('admin_breadcrumb')->breadcrumbs()->setMinDepth(0)->setPartial('partial/breadcrumb') ?>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+        <?php if (! $this->categories) : ?>
+        <h4>List is empty</h4>
+        <?php else : ?>
+        <h4>Categories list</h4>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th>Id</th>
+                    <th>Parent</th>
+                    <th>Name</th>
+                    <th>Is visible</th>
+                    <th>Actions</th>
+                </tr>
+                <?php foreach ($this->categories as $category) : ?>
+                <tr>
+                    <td><?= $this->escapeHtml($category->getId()) ?></td>
+                    <td><?= $this->escapeHtml($this->getParentCategoryName($this->categories, $category)) ?></td>
+                    <td><?= $this->escapeHtml($category->getName()) ?></td>
+                    <td><?= $this->escapeHtml($category->getIsPublic()) ? 'Yes' : 'No'; ?></td>
+                    <td>
+                        <a href="<?= $this->url('admin/category', ['action' => 'edit', 'id' => (int)$category->getId()]) ?>">
+                            Edit
+                        </a>
+                        &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <form action="<?= $this->url('admin/category', ['action' => 'delete', 'id' => (int)$category->getId()]) ?>"
+                              method="post"
+                              class="form-delete"
+                        >
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+        <?php endif; ?>
+    </div>
+</div>

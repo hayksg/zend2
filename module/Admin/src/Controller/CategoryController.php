@@ -20,6 +20,25 @@ class CategoryController extends AbstractActionController
 
     public function indexAction()
     {
+        $categories = $this->categoryRepository->findAll();
+
+        return new ViewModel([
+            'categories' => $categories,
+        ]);
+    }
+
+    public function addAction()
+    {
+        return new ViewModel();
+    }
+
+    public function editAction()
+    {
+        return new ViewModel();
+    }
+
+    public function deleteAction()
+    {
         return new ViewModel();
     }
 }

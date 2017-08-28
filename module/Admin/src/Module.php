@@ -39,4 +39,13 @@ class Module
             ],
         ];
     }
+
+    public function getViewHelperConfig()
+    {
+        return [
+            'invokables' => [
+                'getParentCategoryName' => View\Helper\GetParentCategoryName::class,
+            ],
+        ];
+    }
 }
