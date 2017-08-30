@@ -13,7 +13,68 @@ $this->headTitle($title);
 <br>
 <div class="row">
     <div class="col-sm-12">
-        <h4>Articles list</h4>
+        <?php if (! $this->articles) : ?>
+            <h4>List is empty</h4>
+        <?php else : ?>
+            <h4>Articles list</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <th>#</th>
+                        <th>Id</th>
+                        <th>Category</th>
+                        <th>Title</th>
+                        <th>Short content</th>
+                        <th>Content</th>
+                        <th>Image</th>
+                        <th>Is visible</th>
+                        <th>Actions</th>
+                    </tr>
+                    <?php foreach ($this->articles as $article) : ?>
+                        <tr>
+                            <td><?= (int)++$this->pageCount ?></td>
+                            <td><?= $this->escapeHtml($article->getId()) ?></td>
+                            <td><?= $this->escapeHtml($article->getCategory()->getName()) ?></td>
+                            <td><?= $this->escapeHtml($article->getTitle()) ?></td>
+                            <td><?= $this->escapeHtml($article->getShortContent()) ?></td>
+                            <td><?= $this->escapeHtml($article->getContent()) ?></td>
+                            <td>
+                                <img src="<?= $this->escapeHtml($article->getImage()) ?>"
+                                     class="img-thumbnail img-responsive"
+                                     alt="<?= $this->escapeHtml($article->getTitle()) ?> img"
+                                >
+                            </td>
+                            <td><?= $this->escapeHtml($article->getIsPublic()) ? 'Yes' : 'No'; ?></td>
+                            <td>
+                                <a href="<?= $this->url('admin/article', ['action' => 'edit', 'id' => (int)$article->getId()]) ?>">
+                                    Edit
+                                </a>
+                                &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <form action="<?= $this->url('admin/article', ['action' => 'delete', 'id' => (int)$article->getId()]) ?>"
+                                      method="post"
+                                      class="form-delete"
+                                >
+                                    <button>Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-12">
+        <?php
+        echo $this->paginationControl(
+            $this->articles,
+            'sliding',
+            'partial/paginator',
+            ['route' => 'admin/article']
+        );
+        ?>
     </div>
 </div>
 

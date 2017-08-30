@@ -6,6 +6,9 @@ use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Doctrine\ORM\EntityManagerInterface;
 use Application\Entity\Article;
+use Zend\Paginator\Paginator;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
 
 class ArticleController extends AbstractActionController
 {
@@ -20,11 +23,48 @@ class ArticleController extends AbstractActionController
 
     public function indexAction()
     {
+        $result = $this->getPaginator();
 
-        return new ViewModel();
+        return new ViewModel([
+            'pageCount' => $result['pageCount'],
+            'articles'  => $result['paginator'],
+        ]);
+    }
+
+    private function getPaginator()
+    {
+        $paginator = '';
+        $queryBuilder = $this->articleRepository->getQueryBuilder(false);
+
+        $adaptor = new DoctrinePaginator(new ORMPaginator($queryBuilder));
+        $paginator = new Paginator($adaptor);
+
+        $currentPageNumber = intval($this->params()->fromRoute('page', 0));
+        $paginator->setCurrentPageNumber($currentPageNumber);
+
+        $itemCountPerPage = 2;
+        $paginator->setItemCountPerPage($itemCountPerPage);
+
+        if ($currentPageNumber && $itemCountPerPage) {
+            $pageCount = ($currentPageNumber - 1) * $itemCountPerPage;
+        } else {
+            $pageCount = 0;
+        }
+
+        return ['paginator' => $paginator, 'pageCount' => $pageCount];
     }
 
     public function addAction()
+    {
+        return new ViewModel();
+    }
+
+    public function editAction()
+    {
+        return new ViewModel();
+    }
+
+    public function deleteAction()
     {
         return new ViewModel();
     }

@@ -68,3 +68,8 @@ table a {
 table a:hover, table form button:hover {
     text-decoration: underline !important;
 }
+
+.img-thumbnail {
+    width: 60px;
+    height: 40px;
+}

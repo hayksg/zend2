@@ -37,10 +37,11 @@ return [
                     'article' => [
                         'type' => Segment::class,
                         'options' => [
-                            'route'    => '/article[/:action[/:id]]',
+                            'route'    => '/article[/page/:page][/:action[/:id]]',
                             'constraints'    => [
                                 'action' => '[a-z]+',
                                 'id'     => '[0-9]+',
+                                'page'   => '[0-9]+',
                             ],
                             'defaults' => [
                                 'controller' => Controller\ArticleController::class,
