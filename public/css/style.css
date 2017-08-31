@@ -73,3 +73,7 @@ table a:hover, table form button:hover {
     width: 60px;
     height: 40px;
 }
+
+form ul li {
+    color: #d00;
+}

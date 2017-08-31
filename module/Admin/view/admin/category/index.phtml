@@ -39,7 +39,7 @@ $this->headTitle($title);
                         &nbsp;&nbsp;|&nbsp;&nbsp;
                         <form action="<?= $this->url('admin/category', ['action' => 'delete', 'id' => (int)$category->getId()]) ?>"
                               method="post"
-                              class="form-delete"
+                              class="form-delete confirm-plugin"
                         >
                             <button>Delete</button>
                         </form>

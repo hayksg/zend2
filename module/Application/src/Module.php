@@ -40,6 +40,9 @@ class Module
             'factories' => [
                 'topNavigation' => Service\TopNavigationService::class,
             ],
+            'invokables' => [
+                'formService' => Service\FormService::class,
+            ],
         ];
     }
 

@@ -21,6 +21,13 @@ $(function(){
         $('ul.breadcrumb').remove();
     }
 
+    //  For confirm plugin  ///////////////////////////////////////////////////////////////////////
+
+    $('.confirm-plugin').jConfirmAction({
+        question: 'Are you sure?',
+        noText: 'Cancel'
+    });
+
     //
 
 });
