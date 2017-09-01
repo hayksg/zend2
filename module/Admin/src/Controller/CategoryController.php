@@ -39,13 +39,26 @@ class CategoryController extends AbstractActionController
 
         $request = $this->getRequest();
         if ($request->isPost()) {
-            
+
+            if ($this->isObjectExists($this->categoryRepository, $request->getPost('name'), ['name'])) {
+                $message = "Category with name {$request->getPost('name')} exists already";
+                $form->get('name')->setMessages(['nameExists' => $message]);
+            }
+
             $form->setData($request->getPost());
 
-            if ($form->isValid()) {
+            if ($form->isValid() && empty($form->getMessages())) {
                 $category = $form->getData();
 
+                if ($category->getParent() == 0) {
+                    $category->setParent(null);
+                }
 
+                $this->entityManager->persist($category);
+                $this->entityManager->flush();
+
+                $this->flashMessenger()->addSuccessMessage('Category successfully added.');
+                return $this->redirect()->toRoute('admin/category');
             }
         }
 

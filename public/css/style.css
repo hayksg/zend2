@@ -77,3 +77,13 @@ table a:hover, table form button:hover {
 form ul li {
     color: #d00;
 }
+
+.flash-message {
+    margin-top: 8px;
+}
+
+.success-message {
+    list-style: none;
+    color: green;
+    padding-left: 0;
+}

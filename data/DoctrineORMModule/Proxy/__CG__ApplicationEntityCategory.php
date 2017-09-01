@@ -64,10 +64,10 @@ class Category extends \Application\Entity\Category implements \Doctrine\ORM\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'isPublic', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'parent'];
+            return ['__isInitialized__', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'isPublic', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'parent', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'submit'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'isPublic', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'parent'];
+        return ['__isInitialized__', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'id', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'name', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'isPublic', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'parent', '' . "\0" . 'Application\\Entity\\Category' . "\0" . 'submit'];
     }
 
     /**
@@ -235,7 +235,7 @@ class Category extends \Application\Entity\Category implements \Doctrine\ORM\Pro
     /**
      * {@inheritDoc}
      */
-    public function setParent(\Application\Entity\Category $parent = NULL)
+    public function setParent($parent)
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setParent', [$parent]);

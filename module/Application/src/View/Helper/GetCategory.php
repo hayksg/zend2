@@ -20,8 +20,7 @@ class GetCategory
         $result = $this->entityManager
                        ->createQuery('SELECT c FROM Application\Entity\Category AS c WHERE c.isPublic = 1')
                        ->getResult();
-
-
+        
         $categories = [];
         foreach ($result as $value) {
             $categories[$value->getParent()][] = $value;

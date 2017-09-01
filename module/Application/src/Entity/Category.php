@@ -36,7 +36,7 @@ class Category
      * @Annotation\Attributes({"class":"form-control", "id":"name", "required":"required"})
      * @Annotation\Required({"required":"true"})
      * @Annotation\Options({
-     *     "label":"Name",
+     *     "label":"Name:",
      *     "label_attributes":{"class":"control-label"},
      *     "min":"2",
      *     "max":"255",
@@ -58,13 +58,38 @@ class Category
      * @var boolean
      *
      * @ORM\Column(name="is_public", type="boolean", precision=0, scale=0, nullable=true, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Checkbox")
+     * @Annotation\Attributes({"id":"isPublic"})
+     * @Annotation\Options({
+     *     "label":"Is Visible:",
+     *     "label_attributes":{"class":"label-control"},
+     *     "set_hidden_element":"true",
+     *     "checked_value":"1",
+     *     "unchecked_value":"0",
+     * })
+     * @Annotation\Filter({"name":"boolean"})
+     * @Annotation\AllowEmpty({"allowEmpty":"false"})
      */
-    private $isPublic;
+    private $isPublic = 0;
 
     /**
-     * @var \Application\Entity\Category
+     * @var integer
      *
      * @ORM\Column(name="parent_id", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     *
+     * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
+     * @Annotation\Attributes({"class":"form-control", "id":"parent"})
+     * @Annotation\Options({
+     *     "label":"Parent:",
+     *     "label_attributes":{"name":"control-label"},
+     *     "empty_option":"Without parent category",
+     *     "target_class":"Application\Entity\Category",
+     *     "property":"name",
+     * })
+     * @Annotation\Filter({"name":"digits"})
+     * @Annotation\Filter({"name":"stringTrim"})
+     * @Annotation\Validator({"name":"digits"})
      */
     private $parent;
 
@@ -141,7 +166,7 @@ class Category
      *
      * @return Category
      */
-    public function setParent(\Application\Entity\Category $parent = null)
+    public function setParent($parent)
     {
         $this->parent = $parent;
 

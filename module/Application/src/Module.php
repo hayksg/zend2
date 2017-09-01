@@ -52,6 +52,7 @@ class Module
             'invokables' => [
                 'clearString'     => Controller\Plugin\ClearString::class,
                 'stringValidator' => Controller\Plugin\StringValidator::class,
+                'isObjectExists'  => Controller\Plugin\IsObjectExists::class,
             ],
         ];
     }
