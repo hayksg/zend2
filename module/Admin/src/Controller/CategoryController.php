@@ -50,6 +50,7 @@ class CategoryController extends AbstractActionController
             if ($form->isValid() && empty($form->getMessages())) {
                 $category = $form->getData();
 
+                // If user will choose category without parent
                 if ($category->getParent() == 0) {
                     $category->setParent(null);
                 }
@@ -69,11 +70,79 @@ class CategoryController extends AbstractActionController
 
     public function editAction()
     {
-        return new ViewModel();
+        $id = (int)$this->getEvent()->getRouteMatch()->getParam('id', 0);
+        $category = $this->categoryRepository->find($id);
+
+        if (! $id || ! $category) {
+            return $this->notFoundAction();
+        }
+
+        $form = $this->formService->getAnnotationForm($this->entityManager, $category);
+        $form->setValidationGroup(['name', 'parent', 'isPublic']);
+
+        /* Removes editing category from parents list */
+        $this->clearCategory($form, 'parent', 'name');
+
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+            $form->setData($request->getPost());
+
+            /* In order not allow to repeat category name */
+            $oldName = $this->clearString($category->getName());
+            $newName = $this->clearString($request->getPost('name'));
+
+            if ($this->categoryRepository->findOneBy(['name' => $newName]) && $newName !== $oldName) {
+                $message = "Category with name {$newName} exists already";
+                $form->get('name')->setMessages([$message]);
+            }
+            /* End block */
+
+            if ($form->isValid() && empty($form->getMessages())) {
+                $category = $form->getData();
+
+                // If user will choose category without parent
+                if ($category->getParent() == 0) {
+                    $category->setParent(null);
+                }
+
+                $this->entityManager->persist($category);
+                $this->entityManager->flush();
+
+                $this->flashMessenger()->addSuccessMessage('Category successfully edited.');
+                return $this->redirect()->toRoute('admin/category');
+            }
+        }
+
+        return new ViewModel([
+            'id'   => $id,
+            'form' => $form,
+        ]);
     }
 
     public function deleteAction()
     {
         return new ViewModel();
+    }
+
+    /* Removes editing category from parents list */
+    private function clearCategory($form, $field1, $field2)
+    {
+        $categories = $form->get($field1)->getValueOptions();
+        $arr = [];
+
+        if (is_array($categories)) {
+            foreach ($categories as $category) {
+                if (isset($category['label']) && $form->get($field2)->getValue()) {
+                    if($category['label'] == $form->get($field2)->getValue()) {
+                        unset($category);
+                        continue;
+                    }
+                    $arr[] = $category;
+
+                    $form->get($field1)->setValueOptions($arr);
+                }
+            }
+        }
     }
 }
