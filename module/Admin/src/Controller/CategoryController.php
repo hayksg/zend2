@@ -122,7 +122,19 @@ class CategoryController extends AbstractActionController
 
     public function deleteAction()
     {
-        return new ViewModel();
+        $id = (int)$this->getEvent()->getRouteMatch()->getParam('id', 0);
+        $category = $this->categoryRepository->find($id);
+        $request = $this->getRequest();
+
+        if (! $id || ! $category || ! $request->isPost()) {
+            return $this->notFoundAction();
+        }
+
+        $this->entityManager->remove($category);
+        $this->entityManager->flush();
+
+        $this->flashMessenger()->addSuccessMessage('Category successfully deleted.');
+        return $this->redirect()->toRoute('admin/category');
     }
 
     /* Removes editing category from parents list */
