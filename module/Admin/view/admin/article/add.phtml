@@ -1,11 +1,22 @@
 <?php
 $title = 'Add article';
 $this->headTitle($title);
+
+$form = $this->form;
+$form->setAttribute('action', $this->url('admin/article', ['action' => 'add']));
+$form->prepare();
+
 ?>
 <?= $this->partial('partial/titleAndBreadcrumbTemplate', ['title' => $title]) ?>
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6">
+        <?= $this->form()->openTag($form) ?>
+        <?= $this->formLabel($form->get('title')) ?>
+        <?= $this->formText($form->get('title')) ?>
+        <?= $this->formElementErrors($form->get('title')) ?>
 
+        <?= $this->formSubmit($form->get('submit')) ?>
+        <?= $this->form()->closeTag() ?>
     </div>
 </div>
 

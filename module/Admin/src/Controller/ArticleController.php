@@ -9,16 +9,21 @@ use Application\Entity\Article;
 use Zend\Paginator\Paginator;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
+use Application\Service\FormServiceInterface;
 
 class ArticleController extends AbstractActionController
 {
     private $entityManager;
     private $articleRepository;
+    private $formService;
 
-    public function __construct(EntityManagerInterface $entityManager)
-    {
+    public function __construct(
+        EntityManagerInterface $entityManager,
+        FormServiceInterface $formService
+    ) {
         $this->entityManager = $entityManager;
         $this->articleRepository = $this->entityManager->getRepository(Article::class);
+        $this->formService = $formService;
     }
 
     public function indexAction()
@@ -56,7 +61,24 @@ class ArticleController extends AbstractActionController
 
     public function addAction()
     {
-        return new ViewModel();
+        $article = new Article();
+        $form = $this->formService->getAnnotationForm($this->entityManager, $article);
+        $form->setValidationGroup('title');
+
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+            $form->setData($request->getPost());
+
+            if ($form->isValid()) {
+                $article = $form->getData();
+                var_dump($article);
+            }
+        }
+
+        return new ViewModel([
+            'form' => $form,
+        ]);
     }
 
     public function editAction()
