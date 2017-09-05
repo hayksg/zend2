@@ -60,8 +60,19 @@ class Article
      * @ORM\Column(name="short_content", type="text", length=65535, precision=0, scale=0, nullable=true, unique=false)
      *
      * @Annotation\Type("Zend\Form\Element\Textarea")
-     * @Annotation\Attributes({"class":"form-control", "id":"shortContent", "required":"required"})
-     * @Annotation\Attributes({"class":"form-control", "id":"shortContent", "required":"required"})
+     * @Annotation\Attributes({"class":"form-control", "id":"shortContent"})
+     * @Annotation\Options({
+     *     "label":"Short content:",
+     *     "label_attributes":{"class":"control-label"},
+     * })
+     * @Annotation\Filter({"name":"StripTags"})
+     * @Annotation\Filter({"name":"StringTrim"})
+     * @Annotation\Validator({
+     *     "name":"StringLength",
+     *     "options":{
+     *         "encoding":"utf-8",
+     *     },
+     * })
      */
     private $shortContent;
 
@@ -69,6 +80,24 @@ class Article
      * @var string
      *
      * @ORM\Column(name="content", type="text", length=65535, precision=0, scale=0, nullable=false, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Textarea")
+     * @Annotation\Attributes({"class":"form-control", "id":"shortContent", "required":"required"})
+     * @Annotation\Required({"required":"true"})
+     * @Annotation\Options({
+     *     "label":"Content:",
+     *     "label_attributes":{"class":"control-label"},
+     *     "min":"2",
+     * })
+     * @Annotation\Filter({"name":"StripTags"})
+     * @Annotation\Filter({"name":"StringTrim"})
+     * @Annotation\Validator({
+     *     "name":"StringLength",
+     *     "options":{
+     *         "encoding":"utf-8",
+     *         "min":"2",
+     *     },
+     * })
      */
     private $content;
 
@@ -76,6 +105,35 @@ class Article
      * @var string
      *
      * @ORM\Column(name="image", type="string", length=255, precision=0, scale=0, nullable=true, unique=false)
+     *
+     * @Annotation\Name("file")
+     * @Annotation\Type("Zend\Form\Element\File")
+     * @Annotation\Attributes({"class":"", "id":"file"})
+     * @Annotation\Options({
+     *     "label":"Upload Image:",
+     *     "label_attributes":{"class":"control-label"},
+     * })
+     * @Annotation\Validator({
+     *     "name":"Zend\Validator\File\Extension",
+     *     "options":{"extension":{"png", "jpg", "jpeg", "gif"}}
+     * })
+     * @Annotation\Validator({"name":"Zend\Validator\File\IsImage"})
+     * @Annotation\Validator({
+     *     "name":"Zend\Validator\File\Size",
+     *     "options":{"max":"20000000"},
+     * })
+     * @Annotation\Input("Zend\InputFilter\FileInput")
+     * @Annotation\Filter({
+     *     "name":"FileRenameUpload",
+     *     "options":{
+     *         "target":"./public/img/blog/",
+     *         "useUploadName":"true",
+     *         "useUploadExtension":"true",
+     *         "overwrite":"true",
+     *         "randomize":"false",
+     *     },
+     * })
+     * @Annotation\AllowEmpty({"allowEmpty":"true"})
      */
     private $image;
 
@@ -83,8 +141,20 @@ class Article
      * @var boolean
      *
      * @ORM\Column(name="is_public", type="boolean", precision=0, scale=0, nullable=false, unique=false)
+     *
+     * @Annotation\Type("Zend\Form\Element\Checkbox")
+     * @Annotation\Attributes({"id":"isPublic"})
+     * @Annotation\Options({
+     *     "label":"Is visible:",
+     *     "label_attributes":{"class":"control-label"},
+     *     "set_hidden_element":"true",
+     *     "checked_value":"1",
+     *     "unchecked_value":"0",
+     * })
+     * @Annotation\Filter({"name":"Boolean"})
+     * @Annotation\AllowEmpty({"allowEmpty":"false"})
      */
-    private $isPublic;
+    private $isPublic = 0;
 
     /**
      * @var \Application\Entity\Category
@@ -92,6 +162,17 @@ class Article
      * @ORM\ManyToOne(targetEntity="Application\Entity\Category")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=true)
+     * })
+     *
+     * @Annotation\Type("DoctrineModule\Form\Element\ObjectSelect")
+     * @Annotation\Attributes({"class":"form-control", "id":"category", "required":"required"})
+     * @Annotation\Required({"required":"true"})
+     * @Annotation\Options({
+     *     "label":"Category:",
+     *     "label_attributes":{"class":"control-label"},
+     *     "empty_option":"Select category",
+     *     "target_class":"Application\Entity\Category",
+     *     "property":"name",
      * })
      */
     private $category;

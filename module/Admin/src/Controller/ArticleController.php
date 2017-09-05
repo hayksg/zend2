@@ -63,7 +63,6 @@ class ArticleController extends AbstractActionController
     {
         $article = new Article();
         $form = $this->formService->getAnnotationForm($this->entityManager, $article);
-        $form->setValidationGroup('title');
 
         $request = $this->getRequest();
 

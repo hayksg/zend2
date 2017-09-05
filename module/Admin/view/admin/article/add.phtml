@@ -15,6 +15,26 @@ $form->prepare();
         <?= $this->formText($form->get('title')) ?>
         <?= $this->formElementErrors($form->get('title')) ?>
 
+        <?= $this->formLabel($form->get('shortContent')) ?>
+        <?= $this->formTextarea($form->get('shortContent')) ?>
+        <?= $this->formElementErrors($form->get('shortContent')) ?>
+
+        <?= $this->formLabel($form->get('content')) ?>
+        <?= $this->formTextarea($form->get('content')) ?>
+        <?= $this->formElementErrors($form->get('content')) ?>
+
+        <?= $this->formLabel($form->get('file')) ?>
+        <?= $this->formFile($form->get('file')) ?>
+        <?= $this->formElementErrors($form->get('file')) ?>
+
+        <?= $this->formLabel($form->get('isPublic')) ?>
+        <?= $this->formCheckbox($form->get('isPublic')) ?>
+        <?= $this->formElementErrors($form->get('isPublic')) ?>
+
+        <?= $this->formLabel($form->get('category')) ?>
+        <?= $this->formSelect($form->get('category')) ?>
+        <?= $this->formElementErrors($form->get('category')) ?>
+
         <?= $this->formSubmit($form->get('submit')) ?>
         <?= $this->form()->closeTag() ?>
     </div>
