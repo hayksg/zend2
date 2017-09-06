@@ -9,33 +9,66 @@ $form->prepare();
 ?>
 <?= $this->partial('partial/titleAndBreadcrumbTemplate', ['title' => $title]) ?>
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-8">
         <?= $this->form()->openTag($form) ?>
-        <?= $this->formLabel($form->get('title')) ?>
-        <?= $this->formText($form->get('title')) ?>
-        <?= $this->formElementErrors($form->get('title')) ?>
+        <?php
+            foreach ($form as $element) {
+                $label = '';
+                $formElement = '';
+                $attributes = $element->getAttributes();
 
-        <?= $this->formLabel($form->get('shortContent')) ?>
-        <?= $this->formTextarea($form->get('shortContent')) ?>
-        <?= $this->formElementErrors($form->get('shortContent')) ?>
+                if ($element->getLabel()) {
+                    if (isset($attributes['required']) && $attributes['required'] == 'required') {
+                        $element->setLabel($element->getLabel() . ' *');
+                    }
 
-        <?= $this->formLabel($form->get('content')) ?>
-        <?= $this->formTextarea($form->get('content')) ?>
-        <?= $this->formElementErrors($form->get('content')) ?>
+                    $label = $this->formLabel($element);
+                    $label = str_replace('*', '<strong class="asterisk">*</strong>', $label);
+                }
 
-        <?= $this->formLabel($form->get('file')) ?>
-        <?= $this->formFile($form->get('file')) ?>
-        <?= $this->formElementErrors($form->get('file')) ?>
+                if (isset($attributes['type'])) {
+                    switch ($attributes['type']) {
+                        case 'text':
+                            $formElement .= '<div class="col-sm-10">';
+                            $formElement .= $this->formText($element);
+                            $formElement .= $this->formElementErrors($element);
+                            $formElement .= '</div>';
+                            break;
+                        case 'textarea':
+                            $formElement .= '<div class="col-sm-10">';
+                            $formElement .= $this->formTextarea($element);
+                            $formElement .= $this->formElementErrors($element);
+                            $formElement .= '</div>';
+                            break;
+                        case 'file':
+                            $formElement .= '<div class="col-sm-10">';
+                            $formElement .= $this->formFile($element);
+                            $formElement .= $this->formElementErrors($element);
+                            $formElement .= '</div>';
+                            break;
+                        case 'checkbox':
+                            $formElement .= '<div class="col-sm-10">';
+                            $formElement .= $this->formCheckbox($element);
+                            $formElement .= $this->formElementErrors($element);
+                            $formElement .= '</div>';
+                            break;
+                        case 'select':
+                            $formElement .= '<div class="col-sm-10">';
+                            $formElement .= $this->formSelect($element);
+                            $formElement .= $this->formElementErrors($element);
+                            $formElement .= '</div>';
+                            break;
+                        case 'submit':
+                            $formElement .= '<div class="col-sm-12 col-sm-offset-2">';
+                            $formElement .= $this->formSubmit($element);
+                            $formElement .= '</div>';
+                            break;
+                    }
+                }
 
-        <?= $this->formLabel($form->get('isPublic')) ?>
-        <?= $this->formCheckbox($form->get('isPublic')) ?>
-        <?= $this->formElementErrors($form->get('isPublic')) ?>
-
-        <?= $this->formLabel($form->get('category')) ?>
-        <?= $this->formSelect($form->get('category')) ?>
-        <?= $this->formElementErrors($form->get('category')) ?>
-
-        <?= $this->formSubmit($form->get('submit')) ?>
+                echo '<div class="form-group">' . $label . $formElement . '</div>';
+            }
+        ?>
         <?= $this->form()->closeTag() ?>
     </div>
 </div>

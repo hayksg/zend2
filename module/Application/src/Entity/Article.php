@@ -37,7 +37,7 @@ class Article
      * @Annotation\Required({"required":"true"})
      * @Annotation\Options({
      *     "label":"Title:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label_attributes":{"class":"control-label col-sm-2"},
      *     "min":"2",
      *     "max":"255",
      * })
@@ -63,7 +63,7 @@ class Article
      * @Annotation\Attributes({"class":"form-control", "id":"shortContent"})
      * @Annotation\Options({
      *     "label":"Short content:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label_attributes":{"class":"control-label col-sm-2"},
      * })
      * @Annotation\Filter({"name":"StripTags"})
      * @Annotation\Filter({"name":"StringTrim"})
@@ -82,11 +82,11 @@ class Article
      * @ORM\Column(name="content", type="text", length=65535, precision=0, scale=0, nullable=false, unique=false)
      *
      * @Annotation\Type("Zend\Form\Element\Textarea")
-     * @Annotation\Attributes({"class":"form-control", "id":"shortContent", "required":"required"})
+     * @Annotation\Attributes({"class":"form-control", "id":"content", "required":"required"})
      * @Annotation\Required({"required":"true"})
      * @Annotation\Options({
      *     "label":"Content:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label_attributes":{"class":"control-label  col-sm-2"},
      *     "min":"2",
      * })
      * @Annotation\Filter({"name":"StripTags"})
@@ -111,7 +111,7 @@ class Article
      * @Annotation\Attributes({"class":"", "id":"file"})
      * @Annotation\Options({
      *     "label":"Upload Image:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label_attributes":{"class":"control-label col-sm-2"},
      * })
      * @Annotation\Validator({
      *     "name":"Zend\Validator\File\Extension",
@@ -146,7 +146,7 @@ class Article
      * @Annotation\Attributes({"id":"isPublic"})
      * @Annotation\Options({
      *     "label":"Is visible:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label_attributes":{"class":"text-right col-sm-2"},
      *     "set_hidden_element":"true",
      *     "checked_value":"1",
      *     "unchecked_value":"0",
@@ -169,7 +169,7 @@ class Article
      * @Annotation\Required({"required":"true"})
      * @Annotation\Options({
      *     "label":"Category:",
-     *     "label_attributes":{"class":"control-label"},
+     *     "label_attributes":{"class":"control-label col-sm-2"},
      *     "empty_option":"Select category",
      *     "target_class":"Application\Entity\Category",
      *     "property":"name",

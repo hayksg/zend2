@@ -28,6 +28,20 @@ $(function(){
         noText: 'Cancel'
     });
 
+    //  For input file field on the form  /////////////////////////////////////////////////////////
+
+    if ($(document).width() < 479) {
+        $(":file").jfilestyle({inputSize: "100%"});
+        $('form div.jfilestyle').removeClass('jfilestyle-corner');
+        $('form div.jfilestyle input:first-child').css('margin-bottom', '10px');
+
+    } else {
+        $(":file").jfilestyle({inputSize: "350px"});
+    }
+
     //
+
+
+
 
 });

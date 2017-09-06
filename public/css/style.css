@@ -87,3 +87,12 @@ form ul li {
     color: green;
     padding-left: 0;
 }
+
+textarea {
+    height: 200px !important;
+    resize: vertical;
+}
+
+.asterisk {
+    color: #d00;
+}

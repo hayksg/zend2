@@ -12,6 +12,7 @@
 
         <!-- Le styles -->
         <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/jquery-filestyle.min.css'))
             ->prependStylesheet($this->basePath('css/j-confirm-action.css'))
             ->prependStylesheet($this->basePath('css/liMenuVert.css'))
             ->prependStylesheet($this->basePath('css/style.css'))
@@ -20,6 +21,7 @@
 
         <!-- Scripts -->
         <?= $this->headScript()
+            ->prependFile($this->basePath('js/jquery-filestyle.min.js'))
             ->prependFile($this->basePath('js/j-confirm-action.js'))
             ->prependFile($this->basePath('js/jquery.liMenuVert.js'))
             ->prependFile($this->basePath('js/app-script.js'))
