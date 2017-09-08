@@ -20,7 +20,7 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
-        $articles = $this->repository->findAll();
+        $articles = $this->repository->findBy(['isPublic' => 1], ['id' => 'DESC']);
 
         return new ViewModel([
             'articles' => $articles,

@@ -28,7 +28,13 @@ class CategoryController extends AbstractActionController
             return $this->notFoundAction();
         }
 
-        $articles = $this->entityManager->getRepository(Article::class)->findBy(['category' => $id]);
+        // Using findBy
+        /*$articles = $this->entityManager
+                         ->getRepository(Article::class)
+                         ->findBy(['isPublic' => 1, 'category' => $id], ['id' => 'DESC']);*/
+
+        // Using new created method (getArticles) in Repository
+        $articles = $this->entityManager->getRepository(Article::class)->getArticles($id);
 
         return new ViewModel([
             'category' => $category[0],

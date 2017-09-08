@@ -127,10 +127,10 @@ class Article
      *     "name":"FileRenameUpload",
      *     "options":{
      *         "target":"./public/img/blog/",
-     *         "useUploadName":"true",
-     *         "useUploadExtension":"true",
-     *         "overwrite":"true",
-     *         "randomize":"false",
+     *         "useUploadName":true,
+     *         "useUploadExtension":true,
+     *         "overwrite":true,
+     *         "randomize":false,
      *     },
      * })
      * @Annotation\AllowEmpty({"allowEmpty":"true"})
