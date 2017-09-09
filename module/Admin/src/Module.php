@@ -47,6 +47,7 @@ class Module
         return [
             'invokables' => [
                 'getParentCategoryName' => View\Helper\GetParentCategoryName::class,
+                'checkImage' => View\Helper\CheckImage::class,
             ],
         ];
     }

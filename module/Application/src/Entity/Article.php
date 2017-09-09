@@ -123,16 +123,6 @@ class Article
      *     "options":{"max":"20000000"},
      * })
      * @Annotation\Input("Zend\InputFilter\FileInput")
-     * @Annotation\Filter({
-     *     "name":"FileRenameUpload",
-     *     "options":{
-     *         "target":"./public/img/blog/",
-     *         "useUploadName":true,
-     *         "useUploadExtension":true,
-     *         "overwrite":true,
-     *         "randomize":false,
-     *     },
-     * })
      * @Annotation\AllowEmpty({"allowEmpty":"true"})
      */
     private $image;

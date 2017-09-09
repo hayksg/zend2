@@ -81,12 +81,21 @@ class ArticleController extends AbstractActionController
             if ($form->isValid()) {
                 $article = $form->getData();
 
-                if ($fileName) $article->setImage('/img/blog/' . $fileName);
+                if ($fileName) {
+                    /* block for images unique name in filesystem and database */
+                    $uniqueId = uniqid();
+
+                    $filter = new \Zend\Filter\File\Rename("./public/img/blog/" . $uniqueId . $fileName);
+                    $filter->filter($files['file']);
+
+                    if ($fileName) $article->setImage('/img/blog/' . $uniqueId . $fileName);
+                    /* end block */
+                }
 
                 $this->entityManager->persist($article);
                 $this->entityManager->flush();
 
-                $this->flashMessenger()->addSuccessMessage('Article successfully added.');
+                $this->flashMessenger()->addSuccessMessage('The article successfully added.');
                 return $this->redirect()->toRoute('admin/article');
             }
         }
@@ -98,7 +107,65 @@ class ArticleController extends AbstractActionController
 
     public function editAction()
     {
-        return new ViewModel();
+        $id = (int)$this->getEvent()->getRouteMatch()->getParam('id', 0);
+        $article = $this->articleRepository->find($id);
+
+        $form = $this->formService->getAnnotationForm($this->entityManager, $article);
+
+        if(! $this->getCategoryWhichHasNotParentCategory($form)) {
+            return false;
+        }
+
+        $request = $this->getRequest();
+
+        if ($request->isPost()) {
+            $files = $request->getFiles()->toArray();
+            if ($files) $fileName = $files['file']['name'];
+
+            $data = array_merge_recursive($request->getPost()->toArray(), $files);
+            $form->setData($data);
+
+            $oldTitle = $this->clearString($article->getTitle());
+            $newTitle = $this->clearString($form->get('title')->getValue());
+
+            if ($this->articleRepository->findOneBy(['title' => $newTitle]) && $newTitle !== $oldTitle) {
+                $message = "Article with title {$newTitle} exists already";
+                $form->get('title')->setMessages(['titleExists' => $message]);
+            }
+
+            if ($form->isValid() && empty($form->getMessages())) {
+                $article = $form->getData();
+
+                if ($fileName) {
+                    $oldImage = $article->getImage();
+                    if (is_file(getcwd() . '/public' . $oldImage)) {
+                        unlink(getcwd() . '/public' . $oldImage);
+                    }
+
+                    /* block for images unique name in filesystem and database */
+                    $uniqueId = uniqid();
+
+                    $filter = new \Zend\Filter\File\Rename("./public/img/blog/" . $uniqueId . $fileName);
+                    $filter->filter($files['file']);
+
+                    if ($fileName) $article->setImage('/img/blog/' . $uniqueId . $fileName);
+                    /* end block */
+                }
+
+                $this->entityManager->persist($article);
+                $this->entityManager->flush();
+
+                $this->flashMessenger()->addSuccessMessage('The article successfully edited.');
+
+                return $this->redirect()->toRoute('admin/article');
+            }
+        }
+
+        return new ViewModel([
+            'id'      => $id,
+            'form'    => $form,
+            'article' => $article,
+        ]);
     }
 
     public function deleteAction()

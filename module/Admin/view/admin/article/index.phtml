@@ -44,10 +44,10 @@ $this->headTitle($title);
                             <td><?= $this->escapeHtml($article->getShortContent()) ?></td>
                             <td><?= $this->escapeHtml($article->getContent()) ?></td>
                             <td>
-                                <img src="<?= $this->escapeHtml($article->getImage()) ?>"
-                                     class="img-thumbnail img-responsive"
-                                     alt="<?= $this->escapeHtml($article->getTitle()) ?> img"
-                                >
+                                 <img src="<?= $this->escapeHtml($this->checkImage($article->getImage())) ?>"
+                                 class="img-thumbnail img-responsive"
+                                 alt="<?= $this->escapeHtml($article->getTitle()) ?> img"
+                                 >
                             </td>
                             <td><?= $this->escapeHtml($article->getIsPublic()) ? 'Yes' : 'No'; ?></td>
                             <td>

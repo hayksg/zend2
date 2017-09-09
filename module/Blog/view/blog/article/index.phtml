@@ -19,7 +19,7 @@ if ($this->article) {
             <div class="panel-heading">
                 <h3><?= $this->escapeHtml($article->getTitle()) ?></h3>
                 <div class="overflow-hidden">
-                    <img src="<?= $this->escapeHtml($article->getImage()) ?>"
+                    <img src="<?= $this->escapeHtml($this->checkImage($article->getImage())) ?>"
                          class="img-responsive pull-left app-img"
                          width="200"
                          height="120"
