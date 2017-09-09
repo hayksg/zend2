@@ -48,7 +48,7 @@ class ArticleController extends AbstractActionController
         $currentPageNumber = intval($this->params()->fromRoute('page', 0));
         $paginator->setCurrentPageNumber($currentPageNumber);
 
-        $itemCountPerPage = 2;
+        $itemCountPerPage = 8;
         $paginator->setItemCountPerPage($itemCountPerPage);
 
         if ($currentPageNumber && $itemCountPerPage) {

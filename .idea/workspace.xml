@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f982c309-8b39-4277-ad83-00408afc9f4e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Admin/src/View/Helper/CheckImage.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/blog/c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/blog/robot2.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/src/Controller/ArticleController.php" afterPath="$PROJECT_DIR$/module/Admin/src/Controller/ArticleController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/src/Module.php" afterPath="$PROJECT_DIR$/module/Admin/src/Module.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/view/admin/article/edit.phtml" afterPath="$PROJECT_DIR$/module/Admin/view/admin/article/edit.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/view/admin/article/index.phtml" afterPath="$PROJECT_DIR$/module/Admin/view/admin/article/index.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Application/src/Entity/Article.php" afterPath="$PROJECT_DIR$/module/Application/src/Entity/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Blog/view/blog/article/index.phtml" afterPath="$PROJECT_DIR$/module/Blog/view/blog/article/index.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Blog/view/blog/category/index.phtml" afterPath="$PROJECT_DIR$/module/Blog/view/blog/category/index.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml" afterPath="$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,21 +30,11 @@
       <file leaf-file-name="ArticleController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Admin/src/Controller/ArticleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-128">
-              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+            <state relative-caret-position="312">
+              <caret line="50" column="29" lean-forward="false" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
               <folding>
                 <element signature="e#36#85#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/Application/src/Module.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="52" column="28" lean-forward="false" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="28" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -62,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/index.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="352">
-              <caret line="46" column="108" lean-forward="false" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="108" />
+              <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="108" />
               <folding>
                 <marker date="1504981818714" expanded="true" signature="2370:2411" ph="..." />
               </folding>
@@ -90,7 +71,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
@@ -110,6 +91,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="add.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/add.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Admin/src/Module.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -120,11 +111,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.phtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="edit.phtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/edit.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="43" column="66" lean-forward="false" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+            <state relative-caret-position="418">
+              <caret line="46" column="119" lean-forward="false" selection-start-line="46" selection-start-column="119" selection-end-line="46" selection-end-column="119" />
               <folding />
             </state>
           </provider>
@@ -193,15 +184,15 @@
         <option value="$PROJECT_DIR$/module/Application/src/Entity/Repository/ArticleRepository.php" />
         <option value="$PROJECT_DIR$/module/Blog/src/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/module/Blog/src/Controller/CategoryController.php" />
-        <option value="$PROJECT_DIR$/module/Admin/view/admin/article/edit.phtml" />
         <option value="$PROJECT_DIR$/module/Admin/src/Module.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/View/Helper/CheckImage.php" />
         <option value="$PROJECT_DIR$/module/Application/src/Entity/Article.php" />
-        <option value="$PROJECT_DIR$/module/Admin/src/Controller/ArticleController.php" />
         <option value="$PROJECT_DIR$/module/Admin/view/admin/article/index.phtml" />
         <option value="$PROJECT_DIR$/module/Blog/view/blog/article/index.phtml" />
         <option value="$PROJECT_DIR$/module/Blog/view/blog/category/index.phtml" />
         <option value="$PROJECT_DIR$/module/Blog/view/blog/index/index.phtml" />
+        <option value="$PROJECT_DIR$/module/Admin/src/Controller/ArticleController.php" />
+        <option value="$PROJECT_DIR$/module/Admin/view/admin/article/edit.phtml" />
       </list>
     </option>
   </component>
@@ -776,12 +767,12 @@
       <workItem from="1504711752621" duration="97000" />
       <workItem from="1504712049506" duration="7440000" />
       <workItem from="1504878118741" duration="5353000" />
-      <workItem from="1504965260399" duration="11650000" />
+      <workItem from="1504965260399" duration="11906000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114728000" />
+    <option name="totallyTimeSpent" value="114984000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
@@ -1083,14 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/add.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="73" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Application/src/Controller/Plugin/StringValidator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1123,14 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/edit.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="43" column="66" lean-forward="false" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Admin/src/View/Helper/CheckImage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1145,26 +1120,6 @@
           <caret line="124" column="54" lean-forward="false" selection-start-line="124" selection-start-column="54" selection-end-line="124" selection-end-column="54" />
           <folding>
             <element signature="e#38#70#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/src/Controller/ArticleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-128">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding>
-            <element signature="e#36#85#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="46" column="108" lean-forward="false" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="108" />
-          <folding>
-            <marker date="1504981818714" expanded="true" signature="2370:2411" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1189,6 +1144,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="24" column="103" lean-forward="false" selection-start-line="24" selection-start-column="103" selection-end-line="24" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/src/Controller/ArticleController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="50" column="29" lean-forward="false" selection-start-line="50" selection-start-column="29" selection-end-line="50" selection-end-column="29" />
+          <folding>
+            <element signature="e#36#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="108" />
+          <folding>
+            <marker date="1504981818714" expanded="true" signature="2370:2411" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/add.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/article/edit.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="46" column="119" lean-forward="false" selection-start-line="46" selection-start-column="119" selection-end-line="46" selection-end-column="119" />
           <folding />
         </state>
       </provider>
