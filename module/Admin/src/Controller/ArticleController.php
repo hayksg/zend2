@@ -37,29 +37,6 @@ class ArticleController extends AbstractActionController
         ]);
     }
 
-    private function getPaginator()
-    {
-        $paginator = '';
-        $queryBuilder = $this->articleRepository->getQueryBuilder(false);
-
-        $adaptor = new DoctrinePaginator(new ORMPaginator($queryBuilder));
-        $paginator = new Paginator($adaptor);
-
-        $currentPageNumber = intval($this->params()->fromRoute('page', 0));
-        $paginator->setCurrentPageNumber($currentPageNumber);
-
-        $itemCountPerPage = 8;
-        $paginator->setItemCountPerPage($itemCountPerPage);
-
-        if ($currentPageNumber && $itemCountPerPage) {
-            $pageCount = ($currentPageNumber - 1) * $itemCountPerPage;
-        } else {
-            $pageCount = 0;
-        }
-
-        return ['paginator' => $paginator, 'pageCount' => $pageCount];
-    }
-
     public function addAction()
     {
         $article = new Article();
@@ -137,10 +114,7 @@ class ArticleController extends AbstractActionController
                 $article = $form->getData();
 
                 if ($fileName) {
-                    $oldImage = $article->getImage();
-                    if (is_file(getcwd() . '/public' . $oldImage)) {
-                        unlink(getcwd() . '/public' . $oldImage);
-                    }
+                    $this->deleteImage($article);
 
                     /* block for images unique name in filesystem and database */
                     $uniqueId = uniqid();
@@ -170,7 +144,45 @@ class ArticleController extends AbstractActionController
 
     public function deleteAction()
     {
-        return new ViewModel();
+        $id = (int)$this->getEvent()->getRouteMatch()->getParam('id', 0);
+        $article = $this->articleRepository->find($id);
+
+        if (! $article || ! $this->request->isPost()) {
+            return $this->notFoundAction();
+        }
+
+        $this->deleteImage($article);
+
+        $this->entityManager->remove($article);
+        $this->entityManager->flush();
+
+        $this->flashMessenger()->addSuccessMessage('The article successfully deleted.');
+        return $this->redirect()->toRoute('admin/article');
+
+        return [];
+    }
+
+    private function getPaginator()
+    {
+        $paginator = '';
+        $queryBuilder = $this->articleRepository->getQueryBuilder(false);
+
+        $adaptor = new DoctrinePaginator(new ORMPaginator($queryBuilder));
+        $paginator = new Paginator($adaptor);
+
+        $currentPageNumber = intval($this->params()->fromRoute('page', 0));
+        $paginator->setCurrentPageNumber($currentPageNumber);
+
+        $itemCountPerPage = 8;
+        $paginator->setItemCountPerPage($itemCountPerPage);
+
+        if ($currentPageNumber && $itemCountPerPage) {
+            $pageCount = ($currentPageNumber - 1) * $itemCountPerPage;
+        } else {
+            $pageCount = 0;
+        }
+
+        return ['paginator' => $paginator, 'pageCount' => $pageCount];
     }
 
     private function getCategoryWhichHasNotParentCategory($form)
@@ -199,5 +211,14 @@ class ArticleController extends AbstractActionController
 
         $categories = $form->get('category')->getValueOptions();
         return $categories ?: false;
+    }
+
+    private function deleteImage($article)
+    {
+        $image = $article->getImage();
+        if (is_file(getcwd() . '/public' . $image)) {
+            unlink(getcwd() . '/public' . $image);
+            return true;
+        }
     }
 }

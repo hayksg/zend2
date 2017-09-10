@@ -164,6 +164,7 @@ class Article
      *     "target_class":"Application\Entity\Category",
      *     "property":"name",
      * })
+     * @Annotation\Validator({"name":"digits"})
      */
     private $category;
 
