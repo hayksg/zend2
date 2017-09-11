@@ -30,6 +30,18 @@ class Category
     /**
      * @var string
      *
+     * @Annotation\Type("Zend\Form\Element\Csrf")
+     * @Annotation\Name("hidden")
+     * @Annotation\Options({
+     *     "csrf_options":{"timeout":"600"}
+     * })
+     *
+     */
+    private $hidden;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="name", type="string", length=255, precision=0, scale=0, nullable=false, unique=false)
      *
      * @Annotation\Type("Zend\Form\Element\Text")

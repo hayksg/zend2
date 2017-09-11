@@ -28,6 +28,10 @@ $form->prepare();
 
             if (isset($attributes['type'])) {
                 switch ($attributes['type']) {
+                    case 'hidden':
+                        $formElement .= $this->formHidden($element);
+                        $formElement .= $this->formElementErrors($element);
+                        break;
                     case 'text':
                         $formElement .= '<div class="col-sm-10">';
                         $formElement .= $this->formText($element);

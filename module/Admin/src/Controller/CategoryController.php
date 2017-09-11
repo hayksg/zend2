@@ -79,7 +79,7 @@ class CategoryController extends AbstractActionController
         }
 
         $form = $this->formService->getAnnotationForm($this->entityManager, $category);
-        $form->setValidationGroup(['name', 'parent', 'isPublic']);
+        $form->setValidationGroup(['hidden', 'name', 'parent', 'isPublic']);
 
         /* Removes editing category from parents list */
         $this->clearCategory($form, 'parent', 'name');
