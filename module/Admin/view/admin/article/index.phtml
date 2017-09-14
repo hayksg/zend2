@@ -55,12 +55,20 @@ $this->headTitle($title);
                                     Edit
                                 </a>
                                 &nbsp;&nbsp;|&nbsp;&nbsp;
-                                <form action="<?= $this->url('admin/article', ['action' => 'delete', 'id' => (int)$article->getId()]) ?>"
-                                      method="post"
-                                      class="form-delete confirm-plugin"
-                                >
-                                    <button>Delete</button>
-                                </form>
+                                <?php
+                                $form = $this->form;
+                                $form->setAttributes([
+                                    'action' => $this->url('admin/article', ['action' => 'delete', 'id' => (int)$article->getId()]),
+                                    'class' => 'form-delete confirm-plugin',
+                                ]);
+                                $form->prepare();
+
+                                echo $this->form()->openTag($form);
+                                echo $this->formHidden($form->get('csrf'));
+                                /* Here jquery script(j-confirm-action.js) did not work with name 'submit' */
+                                echo $this->formSubmit($form->get('submit')->setValue('Delete')->setAttribute('name', 'send')->removeAttribute('class', 'btn btn-default'));
+                                echo $this->form()->closeTag();
+                                ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>

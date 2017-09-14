@@ -31,13 +31,13 @@ class Article
      * @var string
      *
      * @Annotation\Type("Zend\Form\Element\Csrf")
-     * @Annotation\Name("hidden")
+     * @Annotation\Name("csrf")
      * @Annotation\Options({
      *     "csrf_options":{"timeout":"600"}
      * })
      *
      */
-    private $hidden;
+    private $csrf;
 
     /**
      * @var string

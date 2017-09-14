@@ -26,9 +26,13 @@ class CategoryController extends AbstractActionController
 
     public function indexAction()
     {
+        $category = new Category();
+        $form = $this->formService->getAnnotationForm($this->entityManager, $category);
+
         $categories = $this->categoryRepository->findAll();
 
         return new ViewModel([
+            'form'       => $form,
             'categories' => $categories,
         ]);
     }
@@ -79,7 +83,7 @@ class CategoryController extends AbstractActionController
         }
 
         $form = $this->formService->getAnnotationForm($this->entityManager, $category);
-        $form->setValidationGroup(['hidden', 'name', 'parent', 'isPublic']);
+        $form->setValidationGroup(['csrf', 'name', 'parent', 'isPublic']);
 
         /* Removes editing category from parents list */
         $this->clearCategory($form, 'parent', 'name');
@@ -131,39 +135,50 @@ class CategoryController extends AbstractActionController
             return $this->notFoundAction();
         }
 
-        /* Block for deletion nested articles images (on server) (If category has nested categories) */
-        $nestedCategoriesChain = $this->getNestedCategoriesChain($id);
+        $form = $this->formService->getAnnotationForm($this->entityManager, $category);
+        $form->setValidationGroup(['csrf']);
 
-        array_walk_recursive($nestedCategoriesChain, function($category) {
-            $articles = $this->entityManager->getRepository(Article::class)->findBy(['category' => $category->getId()]);
+        $form->setData($request->getPost());
 
-            if (isset($articles)) {
-                array_walk_recursive($articles, function($article){
+        if ($form->isValid()) {
+            $category = $form->getData();
+
+            /* Block for deletion nested articles images (on server) (If category has nested categories) */
+            $nestedCategoriesChain = $this->getNestedCategoriesChain($id);
+
+            array_walk_recursive($nestedCategoriesChain, function($category) {
+                $articles = $this->entityManager->getRepository(Article::class)->findBy(['category' => $category->getId()]);
+
+                if (isset($articles)) {
+                    array_walk_recursive($articles, function($article){
+                        if (is_file(getcwd() . '/public' . $article->getImage())) {
+                            unlink(getcwd() . '/public' . $article->getImage());
+                        }
+                    });
+                }
+            });
+            /* End block */
+
+            /* Block for deletion articles images in category (on server) (If category has not nested categories) */
+            $articles = $this->entityManager->getRepository(Article::class)->findBy(['category' => $category]);
+
+            if ($articles) {
+                foreach ($articles as $article) {
                     if (is_file(getcwd() . '/public' . $article->getImage())) {
                         unlink(getcwd() . '/public' . $article->getImage());
                     }
-                });
-            }
-        });
-        /* End block */
-
-        /* Block for deletion articles images in category (on server) (If category has not nested categories) */
-        $articles = $this->entityManager->getRepository(Article::class)->findBy(['category' => $category]);
-
-        if ($articles) {
-            foreach ($articles as $article) {
-                if (is_file(getcwd() . '/public' . $article->getImage())) {
-                    unlink(getcwd() . '/public' . $article->getImage());
                 }
             }
+            /* End block */
+
+            $this->entityManager->remove($category);
+            $this->entityManager->flush();
+
+            $this->flashMessenger()->addSuccessMessage('Category successfully deleted.');
+            return $this->redirect()->toRoute('admin/category');
         }
-        /* End block */
 
-        $this->entityManager->remove($category);
-        $this->entityManager->flush();
-
-        $this->flashMessenger()->addSuccessMessage('Category successfully deleted.');
-        return $this->redirect()->toRoute('admin/category');
+        return $this->notFoundAction();
     }
 
     /* Removes editing category from parents list */

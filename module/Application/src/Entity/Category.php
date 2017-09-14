@@ -28,16 +28,15 @@ class Category
     private $id;
 
     /**
-     * @var string
-     *
      * @Annotation\Type("Zend\Form\Element\Csrf")
-     * @Annotation\Name("hidden")
+     * @Annotation\Name("csrf")
      * @Annotation\Options({
-     *     "csrf_options":{"timeout":"600"}
+     *     "csrf_options":{
+     *          "timeout":600
+     *     }
      * })
-     *
      */
-    private $hidden;
+    private $csrf;
 
     /**
      * @var string

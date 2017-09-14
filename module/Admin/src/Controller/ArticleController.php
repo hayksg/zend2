@@ -29,9 +29,13 @@ class ArticleController extends AbstractActionController
 
     public function indexAction()
     {
+        $article = new Article();
+        $form = $this->formService->getAnnotationForm($this->entityManager, $article);
+
         $result = $this->getPaginator();
 
         return new ViewModel([
+            'form'      => $form,
             'pageCount' => $result['pageCount'],
             'articles'  => $result['paginator'],
         ]);
@@ -151,15 +155,24 @@ class ArticleController extends AbstractActionController
             return $this->notFoundAction();
         }
 
-        $this->deleteImage($article);
+        $form = $this->formService->getAnnotationForm($this->entityManager, $article);
+        $form->setValidationGroup(['csrf']);
 
-        $this->entityManager->remove($article);
-        $this->entityManager->flush();
+        $form->setData($this->request->getPost());
 
-        $this->flashMessenger()->addSuccessMessage('The article successfully deleted.');
-        return $this->redirect()->toRoute('admin/article');
+        if ($form->isValid()) {
+            $article = $form->getData();
 
-        return [];
+            $this->deleteImage($article);
+
+            $this->entityManager->remove($article);
+            $this->entityManager->flush();
+
+            $this->flashMessenger()->addSuccessMessage('The article successfully deleted.');
+            return $this->redirect()->toRoute('admin/article');
+        }
+
+        return $this->notFoundAction();
     }
 
     private function getPaginator()
